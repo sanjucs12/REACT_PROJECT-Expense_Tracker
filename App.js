@@ -1,4 +1,5 @@
 import ExpenseItem from "./components/ExpenseItem";
+//import Expenses from "./components/Expenses";
 
 function App() {
   const expenses = [
@@ -58,6 +59,8 @@ function App() {
         place={expenses[3].place}
         price={expenses[3].price}
       ></ExpenseItem>
+      {/* <Expenses item={Expenses}/> */}
+
     </div>
   );
 }
