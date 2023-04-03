@@ -2,23 +2,23 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
-//Multiple states method (most common method)
+  //Multiple states method (most common method)
 
-  //   const [enteredTitle, setEnteredTitle] = useState("");
-  //   const [enteredLocation, setEnteredLocation] = useState("");
-  //   const [enteredAmount, setEnteredAmount] = useState("");
-  //   const [enteredDate, setEnteredDate] = useState("");
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredLocation, setEnteredLocation] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
   //using one state instead of multiple states
-  const [userInput, setUserInput] = useState({
-    enteredTitle: "",
-    enteredLocation: "",
-    enteredAmount: "",
-    enteredDate: "",
-  });
+  //   const [userInput, setUserInput] = useState({
+  //     enteredTitle: "",
+  //     enteredLocation: "",
+  //     enteredAmount: "",
+  //     enteredDate: "",
+  //   });
 
   const titleChangeHandler = (event) => {
-    //setEnteredTitle(event.target.value);
+    setEnteredTitle(event.target.value);
 
     // setUserInput({
     //     ...userInput,
@@ -27,36 +27,36 @@ const ExpenseForm = () => {
 
     //OR Below method is the rigth way to handle multiple states in single state
 
-    setUserInput((prevState) => {
-      return { ...prevState, enteredTitle: event.target.value };
-    });
+    //     setUserInput((prevState) => {
+    //       return { ...prevState, enteredTitle: event.target.value };
+    //     });
   };
 
   const locationChangeHandler = (event) => {
-    //setEnteredLocation(event.target.value);
+    setEnteredLocation(event.target.value);
 
-    setUserInput({
-      ...userInput,
-      enteredLocation: event.target.value,
-    });
+    //     setUserInput({
+    //       ...userInput,
+    //       enteredLocation: event.target.value,
+    //     });
   };
 
   const amountChangeHandler = (event) => {
-    //setEnteredAmount(event.target.value);
+    setEnteredAmount(event.target.value);
 
-    setUserInput({
-      ...userInput,
-      enteredAmount: event.target.value,
-    });
+    //     setUserInput({
+    //       ...userInput,
+    //       enteredAmount: event.target.value,
+    //     });
   };
 
   const dateChangeHandler = (event) => {
-    //setEnteredDate(event.target.value);
+    setEnteredDate(event.target.value);
 
-    setUserInput({
-      ...userInput,
-      enteredDate: event.target.value,
-    });
+    // setUserInput({
+    //   ...userInput,
+    //   enteredDate: event.target.value,
+    // });
   };
 
   return (
