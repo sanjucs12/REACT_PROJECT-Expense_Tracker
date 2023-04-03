@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   //Multiple states method (most common method)
 
   const [enteredTitle, setEnteredTitle] = useState("");
@@ -67,11 +67,12 @@ const ExpenseForm = () => {
       date: new Date(enteredDate),
       amount: enteredAmount,
     };
-    console.log(expenseData);
-    setEnteredTitle('');
-    setEnteredLocation('');
-    setEnteredDate('');
-    setEnteredAmount('');
+
+    props.onSaveExpenseData(expenseData);
+    setEnteredTitle("");
+    setEnteredLocation("");
+    setEnteredDate("");
+    setEnteredAmount("");
   };
 
   return (
@@ -79,11 +80,19 @@ const ExpenseForm = () => {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={titleChangeHandler} value={enteredTitle}></input>
+          <input
+            type="text"
+            onChange={titleChangeHandler}
+            value={enteredTitle}
+          ></input>
         </div>
         <div className="new-expense__control">
           <label>Location</label>
-          <input type="text" onChange={locationChangeHandler} value={enteredLocation}></input>
+          <input
+            type="text"
+            onChange={locationChangeHandler}
+            value={enteredLocation}
+          ></input>
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
